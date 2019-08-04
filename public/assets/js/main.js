@@ -25,19 +25,22 @@ ReactDOM.render(e(LikeButton), domContainer);
 
 class Hello extends React.Component {
     render() {
+        var xyz = [1, 2, 4];
         return e(
             'label',
-            {},
+            null,
             e(
                 'b',
                 null,
-                e(
-                    'a',
-                    {
-                        href: "radhe",
-                        class: "classname"
-                    },
-                    "borrow"
+                xyz.map((ele, i) => e(
+                        'a',
+                        {
+                            key: i,
+                            href: "radhe",
+                            class: "classname"
+                        },
+                        "borrow" + ele
+                    )
                 )
             )
         );
